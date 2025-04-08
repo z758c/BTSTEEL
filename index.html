@@ -49,7 +49,7 @@
             letter-spacing: 1.5px;
             font-weight: 700;
             font-family: 'Microsoft YaHei', sans-serif;
-            text-shadow: 0 0 10px rgba(211, 47, 47, 0.8), 0 0 20px rgba(211, 47, 47, 0.6);
+            text-shadow: 0 0 10px rgba(211, 47, 47, 0.651), 0 0 20px rgba(211, 47, 47, 0.6);
             transition: all 0.3s ease;
         }
 
@@ -78,7 +78,8 @@
         .button-container {
             display: grid;
             grid-template-columns: repeat(1, 1fr);
-            gap: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 0;
             padding: 0 1.5rem;
             max-width: 500px;
             margin: 0 auto;
@@ -87,25 +88,70 @@
 
         /* 扁平化按钮设计 */
         .btn {
-            padding: 1rem 6rem;
-            border-radius: 20px;
+            display: inline-block;
+            transition: all 0.2s ease-in;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            color: white;
+            padding: 1rem 8rem;
             font-size: 1.1rem;
-            font-weight: 500;
+            font-family: 'Microsoft YaHei', sans-serif;
+            font-weight: 700;
             text-decoration: none;
             text-align: center;
             text-align-last: justify;
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.15);
-            border: 0.5px solid white;
-            background: radial-gradient(circle, #272626, #f1f1f1);
-            color: white;
-            box-shadow: 0 0 15px rgba(251, 107, 36, 0.8);
+            border-radius: 20px;
+            background: linear-gradient(150deg, white, #797878,#797878,white);
+            border: 0px solid white;
+            box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+            margin-bottom: 0;
+            cursor: pointer;
         }
+        .main-menu-btn {
+            
+            margin-top: 1rem;
+            margin-bottom: 0rem;
+           
+        }
+        /* 子菜单按钮样式 */
+        .submenu-btn {
+            color: rgb(7, 7, 7) !important;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 0px solid white !important;
+            text-align: center;
+            
+            text-decoration: none !important;
+        }
+        .submenu-btn:hover{
+            color: rgb(25, 79, 228) !important;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            border: 0px solid white !important;
+            text-align: center;
+            
+            text-decoration: none !important;
+        }
+        .submenu {
+            background: rgba(255, 254, 254, 0.5) !important;
+            color: rgb(3, 3, 3) !important;
+            border-bottom: 1px solid rgb(150, 150, 150) !important;
+            border-left: 1px solid rgb(150, 150, 150) !important;
+            border-right: 1px solid rgb(150, 150, 150) !important;
+            border-top: 0px solid rgb(59, 59, 59) !important;
+            border-radius: 0rem 0rem 0.5rem 0.5rem;
+            text-align: center;
+            width: 80%;
+            margin: 0 auto;
+            padding-top: 0;
+          }
 
         .btn:hover {
             box-shadow: 0 0 20px rgba(249, 250, 250, 0.6);
-            transform: scale(1.05);
-            color: rgb(251, 189, 95);
+            background: linear-gradient(150deg, white, #ffffff,#ffffff,white);
+            
+            color: rgb(14, 13, 13);
         }
 
         .btn:active {
@@ -155,14 +201,33 @@
         <h1 class="main-title">BTSTEEL管理系统</h1>
         <div style="height: 200px;"></div>
         <div class="button-container">
-            <a href="https://mcnpli73gntm.feishu.cn/share/base/dashboard/shrcndGJW5ImfzheePgnRNOfCof" class="btn accident-statistics">产量跟踪仪表盘</a>
-            <a href="https://mcnpli73gntm.feishu.cn/wiki/QnehwWODtiTYLvkU3DQcuXt6n8d?from=from_copylink" class="btn accident-dashboard">事故仪表盘</a>
-            <a href="https://mcnpli73gntm.feishu.cn/share/base/form/shrcnxvtge4lDvpweWHEpKtZXQO" class="btn accident-statistics">实际班产统计</a>
-            <a href="https://mcnpli73gntm.feishu.cn/share/base/form/shrcn7wr3scjg7HgFIHONRXDzad" class="btn accident-statistics">调度事故统计</a>
-            <a href="https://mcnpli73gntm.feishu.cn/share/base/query/shrcn1gMEqC3Fd1spIytWpMpjHc" class="btn accident-query">事故查询</a>
-            <a href="https://mcnpli73gntm.feishu.cn/share/base/form/shrcn1UemXgDATlVBGfkoYWLSss" class="btn accident-query">板坯库存统计</a>
-            <a href="https://mcnpli73gntm.feishu.cn/share/base/form/shrcnQ25LATjsTX99umWISJhKTe" class="btn accident-query">中间库存统计</a>
+            <a href="#" class="btn accident-statistics main-menu-btn">产量跟踪</a>
+            <div class="submenu" style="display: none;">
+                <a href="https://mcnpli73gntm.feishu.cn/share/base/dashboard/shrcndGJW5ImfzheePgnRNOfCof" class="submenu-btn">产量跟踪仪表盘</a>
+                <a href="https://mcnpli73gntm.feishu.cn/share/base/form/shrcnxvtge4lDvpweWHEpKtZXQO" class="submenu-btn">实际班产统计</a>
+            </div>
+            <a href="#" class="btn accident-statistics main-menu-btn">库存跟踪</a>
+            <div class="submenu" style="display: none;">
+                <a href="https://mcnpli73gntm.feishu.cn/share/base/dashboard/shrcnvkYd52dzJa2a9CcmV7L9Ob" class="submenu-btn">库存仪表盘</a>
+                <a href="https://mcnpli73gntm.feishu.cn/share/base/form/shrcn1UemXgDATlVBGfkoYWLSss" class="submenu-btn">板坯库存统计</a>
+                <a href="https://mcnpli73gntm.feishu.cn/share/base/form/shrcnQ25LATjsTX99umWISJhKTe" class="submenu-btn">中间库存统计</a>
+            </div>
+            <a href="#" class="btn accident-statistics main-menu-btn">事故统计</a>
+            <div class="submenu" style="display: none;">
+                <a href="https://mcnpli73gntm.feishu.cn/wiki/QnehwWODtiTYLvkU3DQcuXt6n8d?from=from_copylink" class="submenu-btn">事故仪表盘</a>
+                <a href="https://mcnpli73gntm.feishu.cn/share/base/form/shrcn7wr3scjg7HgFIHONRXDzad" class="submenu-btn">调度事故统计</a>
+                <a href="https://mcnpli73gntm.feishu.cn/share/base/query/shrcn1gMEqC3Fd1spIytWpMpjHc" class="submenu-btn">事故查询</a>
+            </div>
         </div>
+        <script>
+            document.querySelectorAll('.main-menu-btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const submenu = this.nextElementSibling;
+                    submenu.style.display = submenu.style.display === 'none' ? 'grid' : 'none';
+                });
+            });
+        </script>
     </main>
 
     <script>
